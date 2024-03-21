@@ -4,7 +4,12 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import { Icon } from 'astro-icon/components'
 ---
+
+
+
 
 <!doctype html>
 <html lang="en">
@@ -16,40 +21,42 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<header class="bg-stone-500 h-16 flex items-center">
-		Este es mi header
-	</header>
-	<body>
+	<header
 
-		<slot />
+		class="container max-w-7xl mx-auto h-16 flex-items-center"
+	>
+	<div class="flex space-x-6">
+		<img
+			class="h-6"
+			src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+		/>
+		<div class="w-[2px] h-6 bg-slate-800">
+		</div>
+		<img class="h-6" src="xboxlogo.png" />
+		
+
+	</div>
+
+	<menu class="ml-8">
+		<a href="#" class="hover:underline-offset-[6px] decoration-2">
+			Game Pass
+		</a>
+		<Icon   name="mdi:chevron-down"></Icon>
+	</menu>
+	
+	</header>
+	<div class="relative">
+		<div class="absolute h-full flex items-center ">
+			<h1 class="text-white text-5x1 font-bold">FINAL FANTASY XIV</h1>
+		</div>
+	</div>
+	<div>
+		<video aria-label="Ambient video alt text" poster="https://assets.xboxservices.com/assets/45/5a/455a189b-0e7a-48bc-a966-9bf5ec8c08c2.jpg?n=896254_Page-Hero-1084_1920x720_01.jpg" muted="" autoplay="" loop="" alt="Video de FINAL FANTASY XIV Online con imágenes del juego y cinemáticas"><source class="heroImgDesktop" src="https://assets.xboxservices.com/assets/12/ff/12ff90f8-439f-42a6-892b-1bf80f02f027.mp4?n=FFXIV-Online_HP-Video_1920x720_04.mp4" type="video/mp4" srcset="https://assets.xboxservices.com/assets/12/ff/12ff90f8-439f-42a6-892b-1bf80f02f027.mp4?n=FFXIV-Online_HP-Video_1920x720_04.mp4"></video>
+	</div>
+	
 	</body>
+
+	
+
+	
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
